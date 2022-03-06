@@ -1,0 +1,47 @@
+#navDiv{
+	display:flex;
+	width:100vw;
+	min-height:50px;
+	justify-content:space-around;
+	flex-direction:row;
+	background-color:orange;
+	font-family:sans-serif;
+	color:white;
+}
+#logoDiv{
+	width:15%;
+	display:block;
+	padding:10px;
+	flex-direction:column;
+	justify-content:center;
+}
+#balenceDiv{
+	width:15%;
+	height:20px;
+	padding:50px;
+	background-color:gold;
+	border-radius:20px;
+}
+.bale{
+	padding:10px;
+	border:0px;
+	background-color:aqua;
+	color:gold;
+	border-top-right-radius:20px;
+	border-bottom-right-radius:20px;
+}
+#dollorSign{
+	margin:13px;
+	padding:10px;
+	background-color:orange;
+	color:white;
+	border-top-left-radius:20px;
+	border-bottom-left-radius:20px;
+}
+#sender{
+	width:98vw;
+	min-height:500px;
+	box-shadow:5px 5px 5px gray;
+	border-bottom-left-radius:20px;
+	border-bottom-right-radius:20px;
+}
