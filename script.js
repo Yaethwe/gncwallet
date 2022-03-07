@@ -51,7 +51,7 @@ function getData(i,getonly) {
 		  load();
 		}
     } else {
-		alert('error');
+		console.error('error id');
     }
   });
 }
