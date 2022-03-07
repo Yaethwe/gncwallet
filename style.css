@@ -16,7 +16,7 @@
 	justify-content:center;
 }
 #balenceDiv{
-	width:15%;
+	width:50%;
 	height:20px;
 	padding:50px;
 	background-color:gold;
@@ -25,8 +25,19 @@
 .bale{
 	padding:10px;
 	border:0px;
-	background-color:aqua;
-	color:gold;
+	background-color:wheat;
+	color:blue;
+	border-top-right-radius:20px;
+	border-bottom-right-radius:20px;
+	font-family:sans-serif;
+	font-size:25px;
+	
+}
+.bale:hover{
+	padding:10px;
+	border:0px;
+	background-color:yellow;
+	color:blue;
 	border-top-right-radius:20px;
 	border-bottom-right-radius:20px;
 }
@@ -37,11 +48,50 @@
 	color:white;
 	border-top-left-radius:20px;
 	border-bottom-left-radius:20px;
+	font-family:sans-serif;
+	font-size:25px;
 }
 #sender{
+	display:none;
+	position:absolute;
+	background-color:white;
+	top:10vh;
 	width:98vw;
 	min-height:500px;
 	box-shadow:5px 5px 5px gray;
-	border-bottom-left-radius:20px;
-	border-bottom-right-radius:20px;
+	border-radius:20px;
+}
+.btn{
+	background-color:orange;
+	color:white;
+	border:0px;
+	border-radius:10px;
+	padding:10px;
+	margin:15px;
+	font-family:sans-serif;
+	font-size:20px;
+}
+.moneyMode{
+	width:25vw;
+	border-radius:10px;
+	border:5px solid orange;
+}
+}
+.moneyMode:hover{
+	border-radius:10px;
+	border:5px solid blue;
+}
+#screenCover{
+	display:none;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100vw;
+	height:100vh;
+	background-color:black;
+	opacity:0.9;
+}
+.orange{
+	font-family:sans-serif;
+	color:orange;
 }

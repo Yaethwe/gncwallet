@@ -4,6 +4,11 @@ const toIDip = document.querySelector('#toIDip');
 toIDip.value=2;
 const amountip = document.querySelector('#amountip');
 const SENT = document.querySelector('#SENT');
+const selector = document.querySelector('#selector');
+const sentMode = document.querySelector('#sentMode');
+const sender = document.querySelector('#sender');
+const screenCover = document.querySelector('#screenCover');
+const CLOSE = document.querySelector('#CLOSE');
 let mybalence = 0;
 let another = 0;
 //= document.querySelector('');
@@ -65,6 +70,15 @@ function refresh(){
 	getData(toIDip.value,true);
 }
 
+function openSender(){
+	screenCover.style=`display:block;`;
+	sender.style=`display:block;`;
+}
+
+function closeSender(){
+	screenCover.style=`display:none;`;
+	sender.style=`display:none;`;
+}
 
 SENT.onclick=()=>{
 	if(toIDip){
@@ -75,12 +89,8 @@ SENT.onclick=()=>{
 				if(toIDip.value==gid){
 					alert("You can't sent your coin to your own id.");
 				}else{
-					if(mybalence<=0){
-					alert("No Balence");
-					}else{
-						let accept = confirm(`Are you sure you want to sent\n${amountip.value} to ${toIDip.value}?`);
-						if(accept){send(toIDip.value,amountip.value);}					
-					}
+					let accept = confirm(`Are you sure you want to sent\n${amountip.value} to ${toIDip.value}?`);
+					if(accept){send(toIDip.value,amountip.value);}					
 				}
 			}
 		}else{
@@ -91,3 +101,14 @@ SENT.onclick=()=>{
 	}
 }
 
+sentMode.onclick=()=>{
+	if(mybalence<=0){
+		alert("No Balence");
+	}else{
+		openSender();
+	}
+}
+
+CLOSE.onclick=()=>{
+	closeSender();
+}
