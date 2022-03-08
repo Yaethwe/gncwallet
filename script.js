@@ -9,6 +9,7 @@ const sentMode = document.querySelector('#sentMode');
 const sender = document.querySelector('#sender');
 const screenCover = document.querySelector('#screenCover');
 const CLOSE = document.querySelector('#CLOSE');
+const balbtn = document.querySelector('#balbtn');
 let mybalence = 0;
 let another = 0;
 //= document.querySelector('');
@@ -34,7 +35,8 @@ function send(userid,amount){
 	firebase.database().ref("users/" + gid + "/wallet/coin/").set({ bal: mybalence-=parseInt(amount)});
 	console.log(dol);
 	firebase.database().ref("users/" + userid + "/wallet/coin/").set({ bal: dol+=parseInt(amount)});
-	//alert(`You sent \$${amount} to ${userid}.`);
+	closeSender();
+	alert(`You sent \$${amount} to User ID : ${userid}.`);
 }
 
 function getData(i,getonly) {
@@ -89,7 +91,7 @@ SENT.onclick=()=>{
 				if(toIDip.value==gid){
 					alert("You can't sent your coin to your own id.");
 				}else{
-					let accept = confirm(`Are you sure you want to sent\n${amountip.value} to ${toIDip.value}?`);
+					let accept = confirm(`Are you sure you want to sent\n\$${amountip.value} \nto User ID : ${toIDip.value}?`);
 					if(accept){send(toIDip.value,amountip.value);}					
 				}
 			}
@@ -111,4 +113,8 @@ sentMode.onclick=()=>{
 
 CLOSE.onclick=()=>{
 	closeSender();
+}
+
+balbtn.onclick=()=>{
+	alert(`Your balence is \$${bal.textContent}.`);
 }
